@@ -3,6 +3,8 @@ package com.example.bookreviewapp;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
+import android.widget.Button;
+import android.view.View;
 
 import java.util.List;
 import retrofit2.Call;
@@ -18,9 +20,16 @@ public class ReviewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_review);
 
         int bookId = getIntent().getIntExtra("BOOK_ID", 0);
-
-        // Assuming you have a TextView to display reviews
         TextView reviewsView = findViewById(R.id.reviews_text_view);
+        Button backButton = findViewById(R.id.back_button);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Close this activity and return to the previous one in the stack
+                finish();
+            }
+        });
 
         // Initialize Retrofit and fetch reviews
         Retrofit retrofit = new Retrofit.Builder()
@@ -37,7 +46,7 @@ public class ReviewActivity extends AppCompatActivity {
                     for (Review review : response.body()) {
                         reviewsText.append("Rating: ").append(review.getRating())
                                 .append("\nComment: ").append(review.getComment())
-                                .append("\nReviewer: ").append(review.getReviewer())
+                                .append("\nReviewer: ").append(review.getReviewer()) // Assuming reviewer info is available
                                 .append("\n\n");
                     }
                     reviewsView.setText(reviewsText.toString());
@@ -53,4 +62,3 @@ public class ReviewActivity extends AppCompatActivity {
         });
     }
 }
-
