@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
+import android.content.Intent;
 
 public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BookViewHolder> {
     private List<Book> booksList;
@@ -39,6 +40,11 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BookViewHold
         holder.textViewTitle.setText(book.getTitle());
         holder.textViewAuthor.setText(book.getAuthor());
         holder.textViewDescription.setText(book.getDescription());
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), ReviewActivity.class);
+            intent.putExtra("BOOK_ID", book.getBookId());
+            v.getContext().startActivity(intent);
+        });
     }
 
     @Override
