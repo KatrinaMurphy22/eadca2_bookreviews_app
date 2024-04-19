@@ -43,8 +43,10 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BookViewHold
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), ReviewActivity.class);
             intent.putExtra("BOOK_ID", book.getBookId());
+            intent.putExtra("BOOK_TITLE", book.getTitle());
             v.getContext().startActivity(intent);
         });
+
     }
 
     @Override

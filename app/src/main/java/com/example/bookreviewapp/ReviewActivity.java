@@ -12,12 +12,20 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import android.content.Intent;
 
 public class ReviewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review);
+
+        // Retrieve book name from intent
+        String bookName = getIntent().getStringExtra("BOOK_TITLE");
+
+        // Display book name in TextView
+        TextView bookNameTextView = findViewById(R.id.book_name_text_view);
+        bookNameTextView.setText(bookName);
 
         int bookId = getIntent().getIntExtra("BOOK_ID", 0);
         TextView reviewsView = findViewById(R.id.reviews_text_view);
@@ -26,8 +34,7 @@ public class ReviewActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Close this activity and return to the previous one in the stack
-                finish();
+                finish();  // Ends ReviewActivity and returns to MainActivity if it's in the back stack
             }
         });
 

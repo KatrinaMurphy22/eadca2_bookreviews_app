@@ -13,16 +13,28 @@
         android:text="Back to Main"
         android:layout_gravity="center_horizontal"/>
 
+    <TextView
+        android:id="@+id/book_name_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:textColor="@color/black" />
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
+
 
         <TextView
             android:id="@+id/reviews_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:lineSpacingExtra="8dp" />
+            android:lineSpacingExtra="8dp"
+            android:padding="16dp"/>
     </ScrollView>
 </LinearLayout>

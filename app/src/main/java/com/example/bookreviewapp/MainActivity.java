@@ -17,7 +17,6 @@ import android.widget.ProgressBar;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private ProgressBar progressBar;
     private BooksAdapter adapter;
 
     @Override
@@ -26,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerView = findViewById(R.id.recyclerView);
-        progressBar = findViewById(R.id.progressBar);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Initialize Retrofit
@@ -39,14 +37,12 @@ public class MainActivity extends AppCompatActivity {
         BookService bookService = retrofit.create(BookService.class);
 
         // Display progress bar while fetching data
-        progressBar.setVisibility(View.VISIBLE);
         recyclerView.setVisibility(View.GONE);
 
         // Fetch the books
         bookService.listBooks().enqueue(new Callback<List<Book>>() {
             @Override
             public void onResponse(Call<List<Book>> call, Response<List<Book>> response) {
-                progressBar.setVisibility(View.GONE);
                 if (response.isSuccessful() && response.body() != null) {
                     List<Book> books = response.body();
                     if (!books.isEmpty()) {
@@ -65,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Book>> call, Throwable t) {
-                progressBar.setVisibility(View.GONE);
                 Log.e("MainActivity", "API call failed", t);
                 // Optionally, you could display an error message to the user or retry button
             }
