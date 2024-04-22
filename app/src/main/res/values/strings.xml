@@ -1,5 +1,13 @@
 <resources>
-    <string name="app_name">Book Review</string>
+    <string name="app_name">Book Wormz</string>
+    <string name="Write_Review">Write Review</string>
+    <string name="Home">Home</string>
+    <string name="Enter_Review_ID">Enter Review ID</string>
+    <string name="Enter_Book_ID">Enter Book ID</string>
+    <string name="Enter_Reviewer_Name">Enter Reviewer Name</string>
+    <string name="Enter_Rating">Enter Rating (1 to 5)</string>
+    <string name="Enter_Comment">Enter Comment</string>
+    <string name="Submit_Review">Submit Review</string>
 </resources>
 
 

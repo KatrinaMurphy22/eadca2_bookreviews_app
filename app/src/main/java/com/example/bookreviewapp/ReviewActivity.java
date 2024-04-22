@@ -58,7 +58,7 @@ public class ReviewActivity extends AppCompatActivity {
                     }
                     reviewsView.setText(reviewsText.toString());
                 } else {
-                    reviewsView.setText("Failed to retrieve reviews.");
+                    reviewsView.setText("No Reviews Available Yet.");
                 }
             }
 
@@ -66,6 +66,8 @@ public class ReviewActivity extends AppCompatActivity {
             public void onFailure(Call<List<Review>> call, Throwable t) {
                 reviewsView.setText("Error loading reviews.");
             }
+
         });
+
     }
 }

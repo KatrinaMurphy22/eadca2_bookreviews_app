@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Livre Wormz</string>
+    <string name="Home">Maison</string>
+    <string name="Write_Review">Ecrire une critique</string>
+    <string name="Enter_Review_ID">Saisir l\'ID de l\'avis</string>
+    <string name="Enter_Book_ID">Saisir l\'ID du livre</string>
+    <string name="Enter_Reviewer_Name">Entrez le nom du réviseur</string>
+</resources>

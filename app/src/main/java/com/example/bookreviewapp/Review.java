@@ -8,6 +8,13 @@ public class Review {
     private String reviewer;
 
     // Constructors, getters, and setters
+    public Review(int reviewId, int bookId, String reviewer, int rating, String comment) {
+        this.reviewId = reviewId;
+        this.bookId = bookId;
+        this.reviewer = reviewer;
+        this.rating = rating;
+        this.comment = comment;
+    }
     public int getReviewId() { return reviewId; }
     public void setReviewId(int reviewId) { this.reviewId = reviewId; }
     public int getBookId() { return bookId; }

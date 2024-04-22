@@ -12,6 +12,8 @@ import retrofit2.Retrofit;
 import android.util.Log;
 import retrofit2.converter.gson.GsonConverterFactory;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import android.content.Intent;
+
 
 import android.widget.ProgressBar;
 
@@ -65,5 +67,11 @@ public class MainActivity extends AppCompatActivity {
                 // Optionally, you could display an error message to the user or retry button
             }
         });
+
     }
+    public void startAddReviewActivity(View view) {
+        Intent intent = new Intent(this, AddReviewActivity.class);
+        startActivity(intent);
+    }
+
 }
