@@ -6,4 +6,7 @@
     <string name="Enter_Review_ID">Saisir l\'ID de l\'avis</string>
     <string name="Enter_Book_ID">Saisir l\'ID du livre</string>
     <string name="Enter_Reviewer_Name">Entrez le nom du réviseur</string>
+    <string name="Enter_Rating">Entrez la note (1 à 5)</string>
+    <string name="Enter_Comment">Entrez un commentaire</string>
+    <string name="Submit_Review">Poster le commentaire</string>
 </resources>
