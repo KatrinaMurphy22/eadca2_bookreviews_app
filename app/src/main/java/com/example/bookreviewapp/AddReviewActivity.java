@@ -17,6 +17,14 @@ public class AddReviewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_review);
+        Button backButton = findViewById(R.id.back_button);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();  // Ends ReviewActivity and returns to MainActivity if it's in the back stack
+            }
+        });
 
         final EditText editTextReviewId = findViewById(R.id.editTextReviewId);
         final EditText editTextBookId = findViewById(R.id.editTextBookId);

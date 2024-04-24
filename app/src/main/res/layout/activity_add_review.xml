@@ -6,6 +6,13 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Home"
+        android:layout_gravity="center_horizontal"/>
+
     <EditText
         android:id="@+id/editTextReviewId"
         android:layout_width="match_parent"
@@ -45,6 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Submit_Review"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:onClick="submitReview"/>
 
 </LinearLayout>

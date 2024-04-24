@@ -7,6 +7,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import android.content.Intent;
+import java.util.ArrayList;
 
 public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BookViewHolder> {
     private List<Book> booksList;
@@ -23,6 +24,19 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BookViewHold
             textViewDescription = itemView.findViewById(R.id.textViewDescription);
         }
     }
+
+    public void filter(String query) {
+        List<Book> filteredList = new ArrayList<>();
+        for (Book book : booksList) {  // Assuming 'allBooks' stores all your books
+            if (book.getTitle().toLowerCase().contains(query.toLowerCase())) {
+                filteredList.add(book);
+            }
+        }
+        this.booksList.clear();
+        this.booksList.addAll(filteredList);
+        notifyDataSetChanged();
+    }
+
 
     public BooksAdapter(List<Book> booksList) {
         this.booksList = booksList;

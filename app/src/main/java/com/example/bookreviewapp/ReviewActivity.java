@@ -68,6 +68,9 @@ public class ReviewActivity extends AppCompatActivity {
             }
 
         });
-
+    }
+    public void startAddReviewActivity(View view) {
+        Intent intent = new Intent(this, AddReviewActivity.class);
+        startActivity(intent);
     }
 }

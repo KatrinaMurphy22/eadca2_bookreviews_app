@@ -13,7 +13,7 @@ import android.util.Log;
 import retrofit2.converter.gson.GsonConverterFactory;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import android.content.Intent;
-
+import androidx.appcompat.widget.SearchView;
 
 import android.widget.ProgressBar;
 
@@ -61,17 +61,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            @Override
+        @Override
             public void onFailure(Call<List<Book>> call, Throwable t) {
                 Log.e("MainActivity", "API call failed", t);
                 // Optionally, you could display an error message to the user or retry button
             }
         });
 
-    }
-    public void startAddReviewActivity(View view) {
-        Intent intent = new Intent(this, AddReviewActivity.class);
-        startActivity(intent);
     }
 
 }
