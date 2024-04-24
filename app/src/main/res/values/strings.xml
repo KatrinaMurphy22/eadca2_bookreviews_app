@@ -8,6 +8,7 @@
     <string name="Enter_Rating">Enter Rating (1 to 5)</string>
     <string name="Enter_Comment">Enter Comment</string>
     <string name="Submit_Review">Submit Review</string>
+    <string name="Back">Back</string>
 </resources>
 
 

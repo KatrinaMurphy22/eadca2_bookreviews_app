@@ -9,4 +9,5 @@
     <string name="Enter_Rating">Entrez la note (1 à 5)</string>
     <string name="Enter_Comment">Entrez un commentaire</string>
     <string name="Submit_Review">Poster le commentaire</string>
+    <string name="Back">Dos</string>
 </resources>
