@@ -16,5 +16,8 @@ public interface BookService {
     @POST("/api/reviews")
     Call<Void> submitReview(@Body Review review);
 
+    @GET("/api/books/search/{search}")
+    Call<List<Book>> listSearchedBooks(@Path("search") String searchQuery);
+
 }
 

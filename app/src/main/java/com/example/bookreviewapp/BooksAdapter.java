@@ -12,6 +12,11 @@ import java.util.ArrayList;
 public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BookViewHolder> {
     private List<Book> booksList;
 
+    public void setBooks(List<Book> books) {
+        this.booksList = books;
+        notifyDataSetChanged(); // Notify adapter of data change
+    }
+
     public static class BookViewHolder extends RecyclerView.ViewHolder {
         public TextView textViewTitle;
         public TextView textViewAuthor;
@@ -27,7 +32,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BookViewHold
 
     public void filter(String query) {
         List<Book> filteredList = new ArrayList<>();
-        for (Book book : booksList) {  // Assuming 'allBooks' stores all your books
+        for (Book book : booksList) {
             if (book.getTitle().toLowerCase().contains(query.toLowerCase())) {
                 filteredList.add(book);
             }

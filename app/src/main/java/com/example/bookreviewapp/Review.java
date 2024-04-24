@@ -8,8 +8,7 @@ public class Review {
     private String reviewer;
 
     // Constructors, getters, and setters
-    public Review(int reviewId, int bookId, String reviewer, int rating, String comment) {
-        this.reviewId = reviewId;
+    public Review(int bookId, String reviewer, int rating, String comment) {
         this.bookId = bookId;
         this.reviewer = reviewer;
         this.rating = rating;

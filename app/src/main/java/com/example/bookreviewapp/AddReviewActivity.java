@@ -11,6 +11,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import android.util.Log;
 import retrofit2.converter.gson.GsonConverterFactory;
+import android.widget.Toast;
 
 public class AddReviewActivity extends AppCompatActivity {
     @Override
@@ -26,7 +27,30 @@ public class AddReviewActivity extends AppCompatActivity {
             }
         });
 
-        final EditText editTextReviewId = findViewById(R.id.editTextReviewId);
+        Button submitReviewButton = findViewById(R.id.buttonSubmitReview);
+
+        // Set the OnClickListener
+        submitReviewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Assuming you have EditTexts or other inputs to get these values from
+                EditText bookIdInput = findViewById(R.id.editTextBookId);
+                EditText reviewerInput = findViewById(R.id.editTextReviewer);
+                EditText ratingInput = findViewById(R.id.editTextRating);
+                EditText commentInput = findViewById(R.id.editTextComment);
+
+
+                    int bookId = Integer.parseInt(bookIdInput.getText().toString());
+                    String reviewer = reviewerInput.getText().toString();
+                    int rating = Integer.parseInt(ratingInput.getText().toString());
+                    String comment = commentInput.getText().toString();
+
+                    // Call the method to submit the review
+                    submitReview(bookId, reviewer, rating, comment);
+
+            }
+        });
+
         final EditText editTextBookId = findViewById(R.id.editTextBookId);
         final EditText editTextReviewer = findViewById(R.id.editTextReviewer);
         final EditText editTextRating = findViewById(R.id.editTextRating);
@@ -36,18 +60,17 @@ public class AddReviewActivity extends AppCompatActivity {
         buttonSubmitReview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int reviewId = Integer.parseInt(editTextReviewId.getText().toString());
                 int bookId = Integer.parseInt(editTextBookId.getText().toString());
                 String reviewer = editTextReviewer.getText().toString();
                 int rating = Integer.parseInt(editTextRating.getText().toString());
                 String comment = editTextComment.getText().toString();
-                submitReview(reviewId, bookId, reviewer, rating, comment);
+                submitReview(bookId, reviewer, rating, comment);
             }
         });
     }
 
-    public void submitReview(int reviewId, int bookId, String reviewer, int rating, String comment) {
-        Review newReview = new Review(reviewId, bookId, reviewer, rating, comment);
+    public void submitReview(int bookId, String reviewer, int rating, String comment) {
+        Review newReview = new Review(bookId, reviewer, rating, comment);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://ca2bookreviewapi.azurewebsites.net/") // Ensure this URL is correct
