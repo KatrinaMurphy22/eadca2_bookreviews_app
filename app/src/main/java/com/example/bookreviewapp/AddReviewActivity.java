@@ -33,7 +33,6 @@ public class AddReviewActivity extends AppCompatActivity {
         submitReviewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Assuming you have EditTexts or other inputs to get these values from
                 EditText bookIdInput = findViewById(R.id.editTextBookId);
                 EditText reviewerInput = findViewById(R.id.editTextReviewer);
                 EditText ratingInput = findViewById(R.id.editTextRating);

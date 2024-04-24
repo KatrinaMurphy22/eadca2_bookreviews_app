@@ -53,7 +53,7 @@ public class ReviewActivity extends AppCompatActivity {
                     for (Review review : response.body()) {
                         reviewsText.append("Rating: ").append(review.getRating())
                                 .append("\nComment: ").append(review.getComment())
-                                .append("\nReviewer: ").append(review.getReviewer()) // Assuming reviewer info is available
+                                .append("\nReviewer: ").append(review.getReviewer())
                                 .append("\n\n");
                     }
                     reviewsView.setText(reviewsText.toString());

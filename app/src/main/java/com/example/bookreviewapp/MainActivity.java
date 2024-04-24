@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                // Optional: You can handle search suggestions or live search as the user types
                 return false;
             }
         });
